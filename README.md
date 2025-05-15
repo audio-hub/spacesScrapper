@@ -1,4 +1,4 @@
-# 🎙️ Podcast Synthesizer
+# 🎙️ audiohub
 
 Automatically track, download, and summarize **Twitter Spaces** — starting with Bitcoin/finance content — and convert them into engaging, short-form videos and interactive transcripts.
 
