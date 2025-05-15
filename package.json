@@ -1,0 +1,16 @@
+{
+  "name": "spacesscrapper",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "patchright": "^1.52.3"
+  }
+}
