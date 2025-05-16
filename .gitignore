@@ -2,3 +2,4 @@ node_modules
 .env
 .../
 gdrive-sync.json
+downloads

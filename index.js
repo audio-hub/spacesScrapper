@@ -15,21 +15,25 @@ async function main() {
       return;
     }
     
-    console.log(`Found ${liveSpaces.length} live spaces. Downloading...`);
+    console.log(`Found ${liveSpaces.length} live spaces. Starting recordings...`);
     
-    const results = await downloadMultipleSpaces(liveSpaces, "./downloads");
+    const results = await downloadMultipleSpaces(liveSpaces, "./downloads", true);
     
     // Log summary
     const successful = results.filter(r => r.success).length;
-    console.log(`\n📊 Download Summary: ${successful}/${results.length} successful`);
+    console.log(`\n📊 Live Space Summary: ${successful}/${results.length} recordings started`);
+    console.log(`\n⚠️  IMPORTANT: Recordings will continue in the background until manually stopped.`);
+    console.log(`   To stop all recordings, run: pkill -f ffmpeg`);
     
     results.forEach(result => {
       if (result.success) {
-        console.log(`✅ ${result.account}: ${result.filePath}`);
+        const isMP3 = result.filePath.endsWith('.mp3');
+        console.log(`${isMP3 ? '🎵' : '📄'} ${result.account}: ${result.filePath}`);
       } else {
         console.log(`❌ ${result.account}: ${result.error}`);
       }
     });
+    
   } catch (error) {
     console.error("Error in main process:", error);
   }

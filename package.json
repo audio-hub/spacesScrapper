@@ -1,13 +1,14 @@
 {
-  "name": "spacesscrapper",
+  "name": "x-spaces-scraper",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
+  "description": "Minimal X Spaces scraper for following accounts and downloading audio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "check": "node checkLiveSpaces.js",
+    "download": "node downloadAudio.js",
+    "stop": "node stopRecordings.js"
   },
   "dependencies": {
     "dotenv": "^16.5.0",
